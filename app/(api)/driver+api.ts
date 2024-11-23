@@ -7,7 +7,7 @@ export async function GET(request: Request) {
 
     return Response.json({ data: response });
   } catch (error) {
-    console.error("Error fetching drivers:", error);
+    console.error("Error obteniendo choferes:", error);
     return Response.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }

@@ -31,7 +31,7 @@ const SignIn = () => {
       } else {
         // See https://clerk.com/docs/custom-flows/error-handling for more info on error handling
         console.log(JSON.stringify(signInAttempt, null, 2));
-        Alert.alert("Error", "Log in failed. Please try again.");
+        Alert.alert("Error", "Inicio de sesión fallido. Inténtalo de nuevo.");
       }
     } catch (err: any) {
       console.log(JSON.stringify(err, null, 2));
@@ -45,14 +45,14 @@ const SignIn = () => {
         <View className="relative w-full h-[250px]">
           <Image source={images.signUpCar} className="z-0 w-full h-[250px]" />
           <Text className="text-2xl text-black font-JakartaSemiBold absolute bottom-5 left-5">
-            Welcome 👋
+            Bienvenido 👋
           </Text>
         </View>
 
         <View className="p-5">
           <InputField
             label="Email"
-            placeholder="Enter email"
+            placeholder="Ingresa tu email"
             icon={icons.email}
             textContentType="emailAddress"
             value={form.email}
@@ -60,8 +60,8 @@ const SignIn = () => {
           />
 
           <InputField
-            label="Password"
-            placeholder="Enter password"
+            label="Contraseña"
+            placeholder="Ingresa tu contraseña"
             icon={icons.lock}
             secureTextEntry={true}
             textContentType="password"
@@ -70,7 +70,7 @@ const SignIn = () => {
           />
 
           <CustomButton
-            title="Sign In"
+            title="Iniciar Sesión"
             onPress={onSignInPress}
             className="mt-6"
           />
@@ -81,8 +81,8 @@ const SignIn = () => {
             href="/sign-up"
             className="text-lg text-center text-general-200 mt-10"
           >
-            Don't have an account?{" "}
-            <Text className="text-primary-500">Sign Up</Text>
+            No tienes una cuenta?{" "}
+            <Text className="text-primary-500">Registrate</Text>
           </Link>
         </View>
       </View>

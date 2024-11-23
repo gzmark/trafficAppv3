@@ -7,9 +7,12 @@ export async function POST(request: Request) {
   const { name, email, amount } = body;
 
   if (!name || !email || !amount) {
-    return new Response(JSON.stringify({ error: "Missing required fields" }), {
-      status: 400,
-    });
+    return new Response(
+      JSON.stringify({ error: "Faltan campos obligatorios1" }),
+      {
+        status: 400,
+      }
+    );
   }
 
   let customer;
@@ -30,7 +33,7 @@ export async function POST(request: Request) {
 
   const ephemeralKey = await stripe.ephemeralKeys.create(
     { customer: customer.id },
-    { apiVersion: "2024-06-20" },
+    { apiVersion: "2024-06-20" }
   );
 
   const paymentIntent = await stripe.paymentIntents.create({
@@ -48,6 +51,6 @@ export async function POST(request: Request) {
       paymentIntent: paymentIntent,
       ephemeralKey: ephemeralKey,
       customer: customer.id,
-    }),
+    })
   );
 }

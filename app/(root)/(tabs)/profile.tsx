@@ -13,7 +13,7 @@ const Profile = () => {
         className="px-5"
         contentContainerStyle={{ paddingBottom: 120 }}
       >
-        <Text className="text-2xl font-JakartaBold my-5">My profile</Text>
+        <Text className="text-2xl font-JakartaBold my-5">Mi Perfil</Text>
 
         <View className="flex items-center justify-center my-5">
           <Image
@@ -28,7 +28,7 @@ const Profile = () => {
         <View className="flex flex-col items-start justify-center bg-white rounded-lg shadow-sm shadow-neutral-300 px-5 py-3">
           <View className="flex flex-col items-start justify-start w-full">
             <InputField
-              label="First name"
+              label="Nombre"
               placeholder={user?.firstName || "Not Found"}
               containerStyle="w-full"
               inputStyle="p-3.5"
@@ -36,8 +36,8 @@ const Profile = () => {
             />
 
             <InputField
-              label="Last name"
-              placeholder={user?.lastName || "Not Found"}
+              label="Apellido"
+              placeholder={user?.lastName || "No encontrado"}
               containerStyle="w-full"
               inputStyle="p-3.5"
               editable={false}
@@ -46,7 +46,7 @@ const Profile = () => {
             <InputField
               label="Email"
               placeholder={
-                user?.primaryEmailAddress?.emailAddress || "Not Found"
+                user?.primaryEmailAddress?.emailAddress || "No encontrado"
               }
               containerStyle="w-full"
               inputStyle="p-3.5"
@@ -54,8 +54,10 @@ const Profile = () => {
             />
 
             <InputField
-              label="Phone"
-              placeholder={user?.primaryPhoneNumber?.phoneNumber || "Not Found"}
+              label="Telefono"
+              placeholder={
+                user?.primaryPhoneNumber?.phoneNumber || "No encontrado"
+              }
               containerStyle="w-full"
               inputStyle="p-3.5"
               editable={false}
